@@ -1,0 +1,361 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background: #1e1e1e;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+.top {
+    height: 10%;
+    width: 100%;
+    background-color: #0b0b0b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.mid {
+    height: 80%;
+    width: 100%;
+    background-color: #1e1e1e;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.midtop {
+    height: 15%;
+    width: 100%;
+    display: flex;
+    padding: 20px;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.menubut1 {
+    height: 30px;
+    width: 25%;
+    border: 0;
+    background: transparent;
+    color: lightblue;
+    cursor: pointer;
+    background-color: #1e1e1e;
+    border-radius: 7px;
+    transition: 0.5s ease;
+}
+.menubut2 {
+    height: 30px;
+    width: 25%;
+    border: 0;
+    background: transparent;
+    color: gray;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: 0.5s ease;
+}
+.menubut3 {
+    height: 30px;
+    width: 25%;
+    border: 0;
+    background: transparent;
+    color: gray;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: 0.5s ease;
+}
+.menubut4 {
+    height: 30px;
+    width: 25%;
+    border: 0;
+    background: transparent;
+    color: gray;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: 0.5s ease;
+}
+
+.midbottom {
+    height: 85%;
+    min-width: 100%;
+    background: transparent;
+    display: flex;
+    flex-flow: row;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+
+.midbottom::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    appearance: none;
+}
+
+.menu1 {
+    height: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+.menu1::-webkit-scrollbar {
+    height: 0;
+    width:0;
+    appearance: none;
+}
+
+.menu2 {
+    height: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-flow: column;
+    overflow-y: scroll;
+}
+
+.menu2::-webkit-scrollbar {
+    height: 0;
+    width:0;
+    appearance: none;
+}
+
+.menu3 {
+    height: 100%;
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu3::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+    appearance: none;
+}
+
+.about {
+    height: 90%;
+    width: 95%;
+    background-color: #1e1e1e;
+    border-radius: 5px;
+    padding: 30px;
+    color: white;
+    font-family: sans-serif;
+    letter-spacing:0.5s;
+    font-weight: 400;
+    font-size: 14px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.about::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    appearance: none;
+}
+
+.menu4 {
+    height: 100%;
+    min-width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+.menu4::-webkit-scrollbar {
+    height: 0;
+    width:0;
+    appearance: none;
+}
+
+.aarpo24 {
+    height: 200px;
+    width: 350px;
+    background: url("./images/aarpo.png");
+    background-size: cover;
+    background-position: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.blackscreen {
+    height: 100%;
+    width: 100%;
+    background : rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: sans-serif;
+}
+
+.instagram {
+    height: 70px;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.instagram .info {
+    height: 50px;
+    width: 50px;
+    background: url("images/instagramicon.png");
+    background-size: cover;
+    background-position: center;
+    border: 0;
+    outline: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.instagram .content {
+    color: white;
+    padding: 20px;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.gmail {
+    height: 70px;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.gmail .info {
+    height: 50px;
+    width: 50px;
+    background: url("images/gmailicon.png");
+    background-size: cover;
+    background-position: center;
+    border: 0;
+    outline: 0;
+}
+
+.gmail .content {
+    color: white;
+    padding: 20px;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.number {
+    height: 70px;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.number .info {
+    height: 50px;
+    width: 50px;
+    background: url("images/numbericon.png");
+    background-size: cover;
+    background-position: center;
+    border: 0;
+    outline: 0;
+}
+
+.number .content {
+    color: white;
+    padding: 20px;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.site {
+    height: 70px;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.site .info {
+    height: 50px;
+    width: 50px;
+    background: url("images/siteicon.png");
+    background-size: cover;
+    background-position: center;
+    border: 0;
+    outline: 0;
+}
+
+.site .content {
+    color: white;
+    padding: 20px;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+.midcontainer {
+    height: 85%;
+    width: 90%;
+    background-color: #131313;
+    border-radius: 5px 5px 0 0;
+}
+
+.eventtext {
+    color: white;
+}
+
+.bottom {
+    height: 10%;
+    width: 100%;
+    background-color: #131313;
+    border-top: 1px solid white;
+}
+
+.logo {
+    height: 50px;
+    width: 150px;
+    background: url("./images/logo.png");
+    background-size: cover;
+    background-position: center;
+    outline: 0;
+    border: 0;
+}
+
+.qr-wrap {
+    background-color: #DC143C;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
