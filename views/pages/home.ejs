@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" <%= style %> ">
+    <title><%= title %></title>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="qrcode.js"></script>
+</head>
+<body>
+    <div class="top">
+        <button class="logo"></button>
+    </div>
+    <div class="mid">
+        <div class="midcontainer">
+        <div class="midtop">
+            <button class="menubut1">Events & Memories</button>
+            <button class="menubut2">Socials</button>
+            <button class="menubut3">About</button>
+            <button class="menubut4">Your QR Code</button>
+        </div>
+        <div class="midbottom">
+            <div class="menu1">
+            <div class="aarpo24">
+            </div>
+            </div>
+            <div class="menu2">
+            <div class="instagram">
+                <button class="info"></button>
+                <a href="https://instagram.com/zerlox__"><p class="content">@zerlox__</p></a>
+            </div>
+            <div class="gmail">
+                <button class="info"></button>
+                <p class="content">zerlox.sdc@gmail.com</p>
+            </div>
+            <div class="number">
+                <button class="info"></button>
+                <p class="content">+918317489279</p>
+            </div>
+            <div class="site">
+                <button class="info"></button>
+                <p class="content">www.zerlox.com</p>
+            </div>
+            </div>
+            <div class="menu3">
+            <div class="about"> <h1>ZERLOX</h1>
+                <br>
+                <p>We’re Zerlox, a group of BCA students from Shree Devi College of Information Science, Mangalore, and we’re super excited to introduce you to our new project!</p>
+                <br>
+                <h2>Who Are We?</h2>
+                <br>
+                <p>We’re a team of students passionate about making college life easier and more connected. Our goal is to bring you all the latest updates on college programs and events in a fun, accessible way.</p>
+                <br>  
+                <h2>What Are We Up To?</h2>
+                <br>
+                <p>We’ve created a cool website designed to keep you in the loop with everything happening at our college. Here’s what you can find:</p>
+                <br>
+                <ul>
+                    <li><strong>Upcoming Events:</strong> Want to know what’s next? Check out the calendar for upcoming seminars, workshops, and social events. We’ve got all the details so you can plan ahead!</li>
+                    <li><strong>Current Events:</strong> See what’s going on right now. Get updates on ongoing activities and stay in the know about what’s happening on campus today.</li>
+                    <li><strong>Past Events:</strong> Missed an event? No problem! We’ve got a section where you can look back at previous events, check out photos, and catch up on what you missed.</li>
+                    <li><strong>QR Code Passes:</strong> When you log in with your ID and password, you can generate QR codes that act as passes for events. Just scan your code at the door, and you’re in!</li>
+                </ul>
+                <br>
+            
+                <p>We’re here to help you stay informed and make the most out of your college experience. Dive into our site, explore all the features, and stay connected with everything going on at Shree Devi College.</p>
+                <br>
+                <p>Welcome to Zerlox – your friendly guide to all things college!</p>
+            </div>
+            </div>
+            <div class="menu4">
+                <div class="qr-wrap">
+                <div id="qr-code"></div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="bottom"></div>
+<script>        
+    var qrcode = new QRCode("qr-code", {
+      text: "<%= userID %>",
+      width: 256,
+      height: 256,
+      colorDark: "#101010",
+      colorLight: "#DC143C",
+      correctLevel: QRCode.CorrectLevel.H,
+    });
+</script>
+
+<%- include('../partials/footer') %>
