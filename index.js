@@ -8,11 +8,15 @@ const session = require('express-session');
 app.use(bodyParser.json());
 
 // Session setup
+const redisClient = redis.createClient(); // Connects to localhost:6379 by default
+
+// Middleware to use sessions
 app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false } // Set to true if using HTTPS
+    store: new RedisStore({ client: redisClient }),
+    secret: 'your-secret-key', // Replace with your own secret
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false } // Set to true if using HTTPS
 }));
 
 let codes = require('./codes.json').codes;
