@@ -23,7 +23,7 @@ app.use(session({
     secret: 'keyboard cat', // Replace with your own secret
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: true } // Set to true if using HTTPS
+    cookie: { secure: false } // Set to true if using HTTPS
 }));
 
 let codes = require('./codes.json').codes;
@@ -36,6 +36,7 @@ app.post('/login', (req, res) => {
     const codeEntry = codes.find(c => c.code === code);
 
     if (codeEntry) {
+        console.log(code)
       if(code == "cockingnabeel1") {
         req.session.securityLogin = true;
         req.session.loggedIn = true;
