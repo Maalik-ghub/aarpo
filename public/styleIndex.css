@@ -15,7 +15,7 @@ html, body {
 .top {
     height: 10%;
     width: 100%;
-    background-color: #0b0b0b;
+    background-color: #a30a0a;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,7 +25,7 @@ html, body {
 .mid {
     height: 80%;
     width: 100%;
-    background-color: #1e1e1e;
+    background-color: #fff155;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,7 +44,7 @@ html, body {
 .login-text {
     position: relative;
     top: -70px;
-    color: white;
+    color: #fff155;
     font-size: 18px;
     font-family: sans-serif;
     letter-spacing: 0.5px;
@@ -66,14 +66,14 @@ html, body {
     border: 0;
     outline: 0;
     padding: 10px;
-    color: lightblue;
+    color: #a30a0a;
     border-radius: 3px;
 }
 
 .submit-but {
     height: 40px;
     width: 300px;
-    background-color: lightblue;
+    background-color: #fff155;
     border: 0;
     outline: 0;
     border-radius: 3px;
@@ -82,13 +82,19 @@ html, body {
 .bottom {
     height: 10%;
     width: 100%;
-    background-color: #131313;
-    border-top: 1px solid white;
+    background-color: #a30a0a;
+    border-top: 1px solid #131313;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 13px;
+    font-family: sans-serif;
 }
 
 .logo {
-    height: 50px;
-    width: 150px;
+    height: 80px;
+    width: 140px;
     background: url("./images/logo.png");
     background-size: cover;
     background-position: center;
