@@ -17,7 +17,7 @@ docReady(function () {
             ++countResults;
             lastResult = decodedText;
             // Handle on success condition with the decoded message.
-            fetch('https://aarpo.onrender.com:3000/check', {
+            fetch('https://aarpo.onrender.com/check', {
                 method: 'POST',
                 headers: {
                   'Content-Type': 'application/json'
