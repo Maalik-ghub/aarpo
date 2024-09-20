@@ -12,7 +12,7 @@ const menu4 = document.querySelector(".menu4");
 
 menuBut1.addEventListener("click", ()=>{
     menuBut1.style.backgroundColor = "#1e1e1e";
-    menuBut1.style.color = "lightblue";
+    menuBut1.style.color = "red";
     menuBut2.style.backgroundColor = "transparent";
     menuBut2.style.color = "gray";
     menuBut3.style.backgroundColor = "transparent";
@@ -25,7 +25,7 @@ menuBut1.addEventListener("click", ()=>{
 
 menuBut2.addEventListener("click", ()=>{
     menuBut2.style.backgroundColor = "#1e1e1e";
-    menuBut2.style.color = "lightblue";
+    menuBut2.style.color = "red";
     menuBut1.style.backgroundColor = "transparent";
     menuBut1.style.color = "gray";
     menuBut3.style.backgroundColor = "transparent";
@@ -37,7 +37,7 @@ menuBut2.addEventListener("click", ()=>{
 
 menuBut3.addEventListener("click", ()=>{
     menuBut3.style.backgroundColor = "#1e1e1e";
-    menuBut3.style.color = "lightblue";
+    menuBut3.style.color = "red";
     menuBut1.style.backgroundColor = "transparent";
     menuBut1.style.color = "gray";
     menuBut2.style.backgroundColor = "transparent";
@@ -49,7 +49,7 @@ menuBut3.addEventListener("click", ()=>{
 
 menuBut4.addEventListener("click", ()=>{
     menuBut4.style.backgroundColor = "#1e1e1e";
-    menuBut4.style.color = "lightblue";
+    menuBut4.style.color = "red";
     menuBut1.style.backgroundColor = "transparent";
     menuBut1.style.color = "gray";
     menuBut2.style.backgroundColor = "transparent";
