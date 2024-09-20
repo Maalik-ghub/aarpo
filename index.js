@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const session = require('express-session');
 app.use(bodyParser.json());
+const RedisStore = require('connect-redis')(session);
+const redis = require('redis');
 
 // Session setup
 const redisClient = redis.createClient(); // Connects to localhost:6379 by default
