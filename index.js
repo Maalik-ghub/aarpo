@@ -10,7 +10,10 @@ const RedisStore = require('connect-redis')(session);
 const redis = require('redis');
 
 // Session setup
-const redisClient = redis.createClient(); // Connects to localhost:6379 by default
+const redisClient = redis.createClient({
+    host: 'redis://red-crmh9ilumphs739eaa9g', // Your Redis IP
+    port: 6379 // Your Redis port
+});
 
 // Middleware to use sessions
 app.use(session({
