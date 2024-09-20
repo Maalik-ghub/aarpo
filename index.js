@@ -61,6 +61,16 @@ app.post('/check', (req, res) => {
     if (codeEntry && !codeEntry.used) {
         codeEntry.used = true;
         fs.writeFileSync('./codes.json', JSON.stringify({ codes }, null, 2));
+        const sessionKey = `sess: ${code}`;
+
+        redisClient.del(sessionKey, (err, reply) => {
+            if(err) {
+                console.error('Failed to destroy session', err);
+            } else {
+                console.log('Successfully destroyed a session', reply);
+            }
+        });
+        
         res.status(200).send('Valid');
     } else {
         res.status(400).send('Invalid');
