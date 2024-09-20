@@ -20,10 +20,10 @@ redisClient.connect().catch(console.error); // Connect to Redis
 // Middleware to use sessions
 app.use(session({
     store: new RedisStore({ client: redisClient }),
-    secret: 'your-secret-key', // Replace with your own secret
+    secret: 'keyboard cat', // Replace with your own secret
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false } // Set to true if using HTTPS
+    cookie: { secure: true } // Set to true if using HTTPS
 }));
 
 let codes = require('./codes.json').codes;
@@ -36,10 +36,16 @@ app.post('/login', (req, res) => {
     const codeEntry = codes.find(c => c.code === code);
 
     if (codeEntry) {
-        // Set session loggedIn to true
+      if(code == "cockingnabeel1") {
+        req.session.securityLogin = true;
         req.session.loggedIn = true;
         req.session.loginCode = code;
         res.status(200).send(code);
+      } else {
+        req.session.loggedIn = true;
+        req.session.loginCode = code;
+        res.status(200).send(code);
+      }
     } else {
         res.status(400).send('Invalid');
     }
