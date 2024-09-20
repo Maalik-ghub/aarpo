@@ -15,20 +15,22 @@ html, body {
 .top {
     height: 10%;
     width: 100%;
-    background-color: #0b0b0b;
+    background-color: #a30a0a;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .mid {
     height: 80%;
     width: 100%;
-    background-color: #1e1e1e;
+    background-color: #fff155;
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    box-shadow: 3px 15px 6px rgba(0, 0, 0, 0.1) inset, 0 10px 30px rgba(0, 0, 0, 0.08) inset;
 }
 
 .midtop {
@@ -47,7 +49,7 @@ html, body {
     width: 25%;
     border: 0;
     background: transparent;
-    color: lightblue;
+    color: rgb(255, 0, 0);
     cursor: pointer;
     background-color: #1e1e1e;
     border-radius: 7px;
@@ -184,15 +186,18 @@ html, body {
 }
 
 .aarpo24 {
-    height: 200px;
-    width: 350px;
+    position: relative;
+    height: 100%;
+    width: 100%;
     background: url("./images/aarpo.png");
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: center;
     border: 1px solid white;
     border-radius: 5px;
     cursor: pointer;
     margin: 20px;
+    z-index: 1;
 }
 
 .blackscreen {
@@ -327,6 +332,7 @@ a {
     width: 90%;
     background-color: #131313;
     border-radius: 5px 5px 0 0;
+    box-shadow: 10px 4px 6px rgba(0, 0, 0, 0.1), 10px 1px 3px rgba(0, 0, 0, 0.08);
 }
 
 .eventtext {
@@ -336,13 +342,19 @@ a {
 .bottom {
     height: 10%;
     width: 100%;
-    background-color: #131313;
-    border-top: 1px solid white;
+    background-color: #a30a0a;
+    border-top: 1px solid #131313;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 13px;
+    font-family: sans-serif;
 }
 
 .logo {
-    height: 50px;
-    width: 150px;
+    height: 80px;
+    width: 140px;
     background: url("./images/logo.png");
     background-size: cover;
     background-position: center;
