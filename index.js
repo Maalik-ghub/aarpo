@@ -5,15 +5,17 @@ const PORT = 3000;
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const session = require('express-session');
-app.use(bodyParser.json());
-const RedisStore = require('connect-redis')(session);
+const RedisStore = require('connect-redis').default; // Correct import
 const redis = require('redis');
 
-// Session setup
+app.use(bodyParser.json());
+
+// Redis client setup
 const redisClient = redis.createClient({
-    host: 'redis://red-crmh9ilumphs739eaa9g', // Your Redis IP
-    port: 6379 // Your Redis port
+    url: 'redis://red-crmh9ilumphs739eaa9g', // Your Redis URL
 });
+
+redisClient.connect().catch(console.error); // Connect to Redis
 
 // Middleware to use sessions
 app.use(session({
@@ -26,43 +28,35 @@ app.use(session({
 
 let codes = require('./codes.json').codes;
 
-  // Endpoint to login with a code
+// Endpoint to login with a code
 app.post('/login', (req, res) => {
     const { code } = req.body;
-  
-    // Find the code in the list
-    const codeEntry = codes.find(c => c.code === code);
-  
-    if (codeEntry) {
-      // Set session loggedIn to true
-      if(code == "cockingnabeel1") {
-        req.session.securityLogin = true;
-        req.session.loggedIn = true;
-        req.session.loginCode = code;
-        res.status(200).send(code);
-      } else {
-        req.session.loggedIn = true;
-        req.session.loginCode = code;
-        res.status(200).send(code);
-      }
-    } else {
-      res.status(400).send('Invalid');
-    }
-  });
 
-  app.post('/check', (req, res) => {
-    const { code } = req.body;
-  
     // Find the code in the list
     const codeEntry = codes.find(c => c.code === code);
-  
-    if (codeEntry && !codeEntry.used) {
-      // Set session loggedIn to true
-      codeEntry.used = true;
-      fs.writeFileSync('./codes.json', JSON.stringify({ codes }, null, 2));
-      res.status(200).send('Valid');
+
+    if (codeEntry) {
+        // Set session loggedIn to true
+        req.session.loggedIn = true;
+        req.session.loginCode = code;
+        res.status(200).send(code);
     } else {
-      res.status(400).send('Invalid');
+        res.status(400).send('Invalid');
+    }
+});
+
+app.post('/check', (req, res) => {
+    const { code } = req.body;
+
+    // Find the code in the list
+    const codeEntry = codes.find(c => c.code === code);
+
+    if (codeEntry && !codeEntry.used) {
+        codeEntry.used = true;
+        fs.writeFileSync('./codes.json', JSON.stringify({ codes }, null, 2));
+        res.status(200).send('Valid');
+    } else {
+        res.status(400).send('Invalid');
     }
 });
 
@@ -73,15 +67,13 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 // Define routes and middleware here
-const indexRouter = require('./routes/index')
-app.use('/', indexRouter)
-const homeRouter = require('./routes/home')
-app.use('/', homeRouter)
-const scanRouter = require('./routes/scan')
-app.use('/', scanRouter)
+const indexRouter = require('./routes/index');
+app.use('/', indexRouter);
+const homeRouter = require('./routes/home');
+app.use('/', homeRouter);
+const scanRouter = require('./routes/scan');
+app.use('/', scanRouter);
 
-
-// ...
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
